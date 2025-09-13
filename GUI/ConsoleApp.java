@@ -18,7 +18,17 @@ public class ConsoleApp {
 
     public static void main(String[] args) {
         printHeader();
-        while (true) rootMenu();
+        try {
+            while (true) rootMenu();
+        } catch (NoSuchElementException eof) {
+            // stdin closed (Ctrl-D / Ctrl-Z)
+            println("\nEOF detected – exiting.");
+        } catch (Exception ex) {
+            // any other runtime exception
+            println("\nUnexpected error: " + ex.getMessage());
+        } finally {
+            exit();               // always say goodbye
+        }
     }
 
     /* -------------------------- TOP-LEVEL MENUS -------------------------- */
