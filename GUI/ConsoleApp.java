@@ -343,7 +343,7 @@ public class ConsoleApp {
 
     private static void exit() {
         println("Goodbye.");
-        System.exit(0);
+        //System.exit(0);
     }
 
     private static String readLine(String prompt) {
