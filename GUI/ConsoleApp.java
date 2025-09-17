@@ -343,6 +343,8 @@ public class ConsoleApp {
 
     private static void exit() {
         println("Goodbye.");
+        while(true){
+        }
         //System.exit(0);
     }
 
